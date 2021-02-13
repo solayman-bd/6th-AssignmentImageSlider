@@ -38,13 +38,11 @@ const getImages = (query) => {
 let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
-  element.classList.add("added");
+  element.classList.toggle("added");
 
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
-  } else {
-    alert("Hey, Already added !");
   }
 };
 var timer;
@@ -124,7 +122,10 @@ searchBtn.addEventListener("click", function () {
 sliderBtn.addEventListener("click", function () {
   createSlider();
 });
+// Get the input field
+// var input = document.getElementById("search");
 
+// Execute a function when the user releases a key on the keyboard
 search.addEventListener("keyup", function (event) {
   // Number 13 is the "Enter" key on the keyboard
   if (event.key === "Enter") {
